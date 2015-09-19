@@ -7,7 +7,7 @@ typedef struct Nodo{
   int coste[NODOS][NODOS];
 }
 
-Nodo *inicializa(Nodo grafo){
+Nodo *inicializa_nodo(Nodo grafo){
   int contadorA,contadorB
   Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
   for(contadorA=0; contadorA<=Nodos; contadorA++){
@@ -20,7 +20,7 @@ Nodo *inicializa(Nodo grafo){
   return (aux);
 }
 
-Nodo *agrega_elementos(Nodo grafo){
+Nodo *agrega_elementos_nodo(Nodo grafo){
   grafo->nombre[0]=("A");
   grafo->nombre[1]=("B");
   grafo->nombre[2]=("C");
