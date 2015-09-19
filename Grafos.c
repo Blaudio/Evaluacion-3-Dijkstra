@@ -3,7 +3,6 @@
 
 typedef struct Nodo{
   char nombre[NODOS];
-  char color[NODOS];
   int coste[NODOS][NODOS];
 }
 
@@ -12,7 +11,6 @@ Nodo *inicializa_nodo(Nodo grafo){
   Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
   for(contadorA=0; contadorA<=Nodos; contadorA++){
      aux->nombre[contadorA]=NULL;
-     aux->color[contadorA]=("W");
     for(contadorB=0; contadorB<=Nodos; contadorB++){
       aux->coste[contadorA][contadorB]=0;//ninguno nodo sera vecino de manera predeterminada
     }
