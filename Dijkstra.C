@@ -11,3 +11,4 @@ Dijkstra *inicializa (Dijkstra lista){
     lista->padre[contador]=NULL;
     lista->peso[contador]=999;
 }
+
