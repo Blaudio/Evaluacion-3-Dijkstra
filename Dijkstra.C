@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 typedef struct Dijkstra{
-  int padre[NODOS]
+  int padre[NODOS];
   int peso[NODOS];
+  char color[NODOS];
 }
 
 Dijkstra *inicializa_lista (Dijkstra lista){
@@ -10,6 +11,7 @@ Dijkstra *inicializa_lista (Dijkstra lista){
   for(contador=0; contador<=Nodos; contador++){
     lista->padre[contador]=NULL;
     lista->peso[contador]=999;
+    lista->color[contador]=("W");
   }
   return (lista);
 }
@@ -23,16 +25,23 @@ Dijkstra *inicializa_lista (Dijkstra lista){
 //  }
 Dijkstra *busqueda(Nodo grafo, Dijkstra lista, int elemento){
   int contador,costo;
-  grafo->color[elemento]=("G");
+  lista->color[elemento]=("G");
   for(contador=0; contador<=Nodos; contador++);{
-    if(grafo->coste[elemento][contador]>0 && grafo->color[contador]=="W"){
-      coste=grafo->coste[elemento][contador];
+    costo=lista->peso[elemento]+grafo->coste[elemento][contador];
+    if(grafo->coste[elemento][contador]>0 && lista->color[contador]=="W"){
       llenar_lista(lista, elemento, contador, costo);
       busqueda(grafo, lista, contador);
-    }else if (grafo->coste[elemento][contador]>0 && grafo->color[contador]=="G"){
-      coste=grafo->coste[elemento][contador];
+    }else if (grafo->coste[elemento][contador]>0 && lista->color[contador]=="G"){
       llenar_lista(lista, elemento, contador, costo);
     }
   }
-  return(lista)
+  return(lista);
+}
+
+dijkstra *llenar_lista(Dijkstra lista, int elemento, int nuevo, int costo){
+  if(lista->peso[nuevo]>costo){
+    lista->peso[nuevo]=costo;
+    lista->padre[nuevo]=elemento;
+  } 
+  return (lista);
 }
