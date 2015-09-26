@@ -32,7 +32,7 @@ Dijkstra *busqueda(Nodo grafo, Dijkstra lista, int elemento){
   return(lista);
 }
 
-dijkstra *llenar_lista(Dijkstra lista, int elemento, int nuevo, int costo){
+Dijkstra *llenar_lista(Dijkstra lista, int elemento, int nuevo, int costo){
   if(lista->peso[nuevo]>costo){
     lista->peso[nuevo]=costo;
     lista->padre[nuevo]=elemento;
