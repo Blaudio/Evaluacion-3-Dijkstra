@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Grafos.h"
 #include "Dijkstra.h"
+#include "Archivos.h"
 
 int main(){
   Nodo *grafo =inicializa_nodo();
