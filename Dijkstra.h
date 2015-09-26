@@ -7,7 +7,7 @@ typedef struct Dijkstra{
   char color[NODOS];
 }
 
-Dijkstra *inicializa_lista (){
+Dijkstra *inicializa_lista(){
   int contador;
   for(contador=0; contador<=Nodos; contador++){
     lista->padre[contador]=NULL;
