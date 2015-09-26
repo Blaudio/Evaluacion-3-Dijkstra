@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define NODOS 7
 
 typedef struct Dijkstra{
   int padre[NODOS];
