@@ -17,13 +17,6 @@ Dijkstra *inicializa_lista(){
   return (lista);
 }
 
-//  int contadorA, contadorB;
-//  for(contadorA=0; contadorA<=Nodos; contadorA++){
-//    for(contadorB=0; contadorB<=Nodos; contadorB++){
-//      if(grafo->color[contadorA]==("W") && grafo->coste[contadorA][contadorB]>0){
-//      }
-//    }
-//  }
 Dijkstra *busqueda(Nodo grafo, Dijkstra lista, int elemento){
   int contador,costo;
   lista->color[elemento]=("G");
