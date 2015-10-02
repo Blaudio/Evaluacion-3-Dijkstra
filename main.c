@@ -9,4 +9,5 @@ int main(){
   *grafo =agrega_elementos_nodo(grafo);
   Dijkstra *lista =*inicializa_lista();
   *busqueda(grafo, lista, 4);//se comiensa la busqueda con la letra E
+  generador_mapa(grafo)
 }
