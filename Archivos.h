@@ -1,18 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "Grafos.h"
+#include "Dijkstra.h"
 #define NODOS 7
 
-void generador_mapa(Dijkstra lista){
+void generador_mapa(Dijkstra lista, Nodo grafo){
   FILE* fichero;
-  //char columna[80] = "c:\\grafo.dot";
-  //char fila[81];
   fichero = fopen ("c:\\grafo.dot", "wt");
-  fprintf(fichero,"disgraph grafo{\n");
-  fprintf(fichero,"  splines = true;\n");
-  fprintf(fichero,"  node [style=filled, fillcolor=white, fontcolor=black];\n");
-  fprintf(fichero,"  edge [color=black];\n");
+  fprintf(fichero,"digraph ethane {\n");
   for(contador=0; contador<=NODOS; contador++);{
-    fprintf(fichero,"  %i [label=\"%s\"];\n",contador, lista->color[contador]);
+    if (lista->color[contador]=="W"){
+      fprintf(fichero,"  %s;\n",grafo->nombre[contador]);  
+    }else{
+      fprintf(fichero,"  %s --> %s [label=%i];\n", grafo->nombre[lista->padre[contador]], grafo->nombre[contador], lista->peso[contador]);  
+    }
   }
   fprintf(fichero,"}\n");
   fclose(fichero);      
