@@ -9,9 +9,9 @@ typedef struct Nodo{
 Nodo *inicializa_nodo(){
   int contadorA,contadorB
   Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
-  for(contadorA=0; contadorA<=Nodos; contadorA++){
+  for(contadorA=0; contadorA<=NODOS; contadorA++){
      aux->nombre[contadorA]=NULL;
-    for(contadorB=0; contadorB<=Nodos; contadorB++){
+    for(contadorB=0; contadorB<=NODOS; contadorB++){
       aux->coste[contadorA][contadorB]=0;//ninguno nodo sera vecino de manera predeterminada
     }
   }
