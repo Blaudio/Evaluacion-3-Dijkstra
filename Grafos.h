@@ -1,14 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define NODOS 7
 
-typedef struct Nodo{
-  char nombre[NODOS];
+typedef struct _Nodo{
+  char *nombre[NODOS];
   int coste[NODOS][NODOS];
-}
+}Nodo;
 
 Nodo *inicializa_nodo(){
-  int contadorA,contadorB
-  Nodo *aux = (Nodo *)malloc(sizeof(Nodo));
+  int contadorA,contadorB;
+  Nodo *aux;
+  aux = (Nodo *)malloc(sizeof(Nodo));
   for(contadorA=0; contadorA<=NODOS; contadorA++){
      aux->nombre[contadorA]=NULL;
     for(contadorB=0; contadorB<=NODOS; contadorB++){
@@ -18,27 +20,27 @@ Nodo *inicializa_nodo(){
   return (aux);
 }
 
-Nodo *agrega_elementos_nodo(Nodo grafo){
-  grafo->nombre[0]=("A");
-  grafo->nombre[1]=("B");
-  grafo->nombre[2]=("C");
-  grafo->nombre[3]=("D");
-  grafo->nombre[4]=("E");
-  grafo->nombre[5]=("F");
-  grafo->nombre[6]=("G");
-  grafo->nombre[7]=("H");
-  grafo->coste[0][1]=5;
-  grafo->coste[0][5]=3;
-  grafo->coste[1][2]=7;
-  grafo->coste[2][0]=8;
-  grafo->coste[2][4]=4;
-  grafo->coste[3][2]=1;
-  grafo->coste[3][5]=2;
-  grafo->coste[3][6]=5;
-  grafo->coste[4][6]=9;
-  grafo->coste[4][7]=3;
-  grafo->coste[6][5]=4;
-  grafo->coste[6][7]=6;
-  grafo->coste[7][1]=1;
-  return (grafo);
+Nodo *agrega_elementos_nodo(Nodo *aux){
+  aux->nombre[0]=("A");
+  aux->nombre[1]=("B");
+  aux->nombre[2]=("C");
+  aux->nombre[3]=("D");
+  aux->nombre[4]=("E");
+  aux->nombre[5]=("F");
+  aux->nombre[6]=("G");
+  aux->nombre[7]=("H");
+  aux->coste[0][1]=5;
+  aux->coste[0][5]=3;
+  aux->coste[1][2]=7;
+  aux->coste[2][0]=8;
+  aux->coste[2][4]=4;
+  aux->coste[3][2]=1;
+  aux->coste[3][5]=2;
+  aux->coste[3][6]=5;
+  aux->coste[4][6]=9;
+  aux->coste[4][7]=3;
+  aux->coste[6][5]=4;
+  aux->coste[6][7]=6;
+  aux->coste[7][1]=1;
+  return (aux);
 }
