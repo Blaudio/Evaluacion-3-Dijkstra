@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define NODOS 7
+#define NODOS 8
 
 typedef struct _Nodo{
-  char *nombre[NODOS];
+  char nombre[NODOS];
   int coste[NODOS][NODOS];
 }Nodo;
 
 Nodo *inicializa_nodo(){
   int contadorA,contadorB;
   Nodo *aux;
-  aux = (Nodo *)malloc(sizeof(Nodo));
-  for(contadorA=0; contadorA<=NODOS; contadorA++){
-     aux->nombre[contadorA]=NULL;
-    for(contadorB=0; contadorB<=NODOS; contadorB++){
+  //aux = (Nodo *)malloc(sizeof(Nodo));
+  aux = malloc(sizeof(Nodo));
+  for(contadorA=0; contadorA<NODOS; contadorA++){
+     aux->nombre[contadorA]=' ';
+    for(contadorB=0; contadorB<NODOS; contadorB++){
       aux->coste[contadorA][contadorB]=0;//ninguno nodo sera vecino de manera predeterminada
     }
   }
@@ -21,14 +22,14 @@ Nodo *inicializa_nodo(){
 }
 
 Nodo *agrega_elementos_nodo(Nodo *aux){
-  aux->nombre[0]=("A");
-  aux->nombre[1]=("B");
-  aux->nombre[2]=("C");
-  aux->nombre[3]=("D");
-  aux->nombre[4]=("E");
-  aux->nombre[5]=("F");
-  aux->nombre[6]=("G");
-  aux->nombre[7]=("H");
+  aux->nombre[0]='A';
+  aux->nombre[1]='B';
+  aux->nombre[2]='C';
+  aux->nombre[3]='D';
+  aux->nombre[4]='E';
+  aux->nombre[5]='F';
+  aux->nombre[6]='G';
+  aux->nombre[7]='H';
   aux->coste[0][1]=5;
   aux->coste[0][5]=3;
   aux->coste[1][2]=7;
