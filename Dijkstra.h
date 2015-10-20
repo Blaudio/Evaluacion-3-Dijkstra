@@ -42,8 +42,8 @@ void agragar_a_generador_mapa(Dijkstra *lista, Nodo *grafo){
       printf("  %c;\n",grafo->nombre[contador]);  
     }else{
     	if(lista->padre[contador]==-1){
-    		fprintf(fichero,"  %c;\n", grafo->nombre[contador], lista->peso[contador]);  
-    		printf("  %c;\n", grafo->nombre[contador], lista->peso[contador]);  
+    		fprintf(fichero,"  %c;\n", grafo->nombre[contador]);  
+    		printf("  %c;\n", grafo->nombre[contador]);  
     	}else{
     		fprintf(fichero,"  %c --> %c [label=%i];\n", grafo->nombre[lista->padre[contador]], grafo->nombre[contador], lista->peso[contador]);  
     		printf("  %c --> %c [label=%i];\n", grafo->nombre[lista->padre[contador]], grafo->nombre[contador], lista->peso[contador]);  
